@@ -55,3 +55,41 @@
  .secondary__btn{
     background: var(--btn-primary-bg);
  }
+
+
+ @media only screen and (max-width:992px){
+   .hero__content h2{
+      font-size: 2rem;
+      line-height: 50px;
+   }
+ }
+
+ @media only screen and (max-width:768px){
+     .hero__content h2{
+      font-size: 1.5rem;
+      line-height: 45px;
+     }
+
+     .hero__content p {
+      font-size: 0.9rem;
+
+     }
+     .primary__btn, .secondary__btn{
+      font-size: .8rem;
+     }
+
+     .hero__content,
+     .hero__img{
+      width: 100%;
+     }
+ }
+
+ @media only screen and (max-width: 600) {
+   .hero__content,
+   .hero__img{
+      width: 100%;
+   }
+   .hero__wrapper{
+      flex-direction: column;
+   }
+ }

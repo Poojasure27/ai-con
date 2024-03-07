@@ -5,8 +5,8 @@ import aboutImg from "../../images/firstRight.png";
 
 const chooseData = [
     {
-       icon: "ri-wifi-line",
-       title: "first working process",
+       icon: "ri-image-line",
+       title: "Image",
        description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, ea non odio accusamus odit officiis dolor facilis error, eum numquam cum tempore culpa corrupti ad accusantium quis hic. Vel, inventore?"
     },
     {
@@ -15,8 +15,8 @@ const chooseData = [
         description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, ea non odio accusamus odit officiis dolor facilis error, eum numquam cum tempore culpa corrupti ad accusantium quis hic. Vel, inventore?"
      },
      {
-        icon: "ri-wifi-line",
-        title: "first working process",
+        icon: "ri-file-line",
+        title: "Document",
         description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, ea non odio accusamus odit officiis dolor facilis error, eum numquam cum tempore culpa corrupti ad accusantium quis hic. Vel, inventore?"
      },
 ]
@@ -27,7 +27,7 @@ const chooseData = [
 
 const About = () => {
   return (<section id="about">
-   <div className="conatiner">
+   <div className="container">
     <div className="about__wrapper">
         <div className="about__content">
         <h6 className='subtitles'>Why choose us?</h6>
@@ -41,7 +41,7 @@ const About = () => {
                     <div className="choose__us-item" key={index}> 
                     <span className="choose__us-icon"><i class={item.icon}></i></span>
                     <h4 className="choose__us-title">{item.title}</h4>
-                    <p className="description">{item.desc}</p></div>  
+                    <p className="description">{item.description}</p></div>  
                 ))
             }
            </div>

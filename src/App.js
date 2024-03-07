@@ -5,6 +5,9 @@ import Header from "./components/Header/Header";
 import Hero from "./components/UI/Hero";
 import Services from "./components/UI/Sevices";
 import About from './components/UI/About';
+import Sample from './components/UI/Sample';
+import Carousel from './components/UI/Carousel';
+import Footer from './components/footer/Footer';
 
 const App = () => {
   return (
@@ -13,6 +16,9 @@ const App = () => {
      <Hero />
      <Services />
      <About />
+     <Sample />
+     <Carousel />
+     <Footer />
    </>
   );
 }
