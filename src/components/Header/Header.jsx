@@ -1,89 +1,93 @@
-import React, {useEffect, useRef} from 'react'
+import React, { useEffect, useRef } from 'react';
 import "./Header.css";
+import Image from "../../Image";
+import { useNavigate } from 'react-router-dom';
 
-
-const nav__links = [{
-  path:'#about',
-  display:"About"
-},
-{
-  path:'#service',
-  display:"Image"
-},
-{
-  path:'#image',
-  display:"Image"
-},
-{
-  path:'#docs',
-  display:"Docs"
-}
-]
+const nav__links = [
+  {
+    path: '#about',
+    display: "About"
+  },
+  {
+    path: '#service',
+    display: "Service"
+  },
+  {
+    path: '/image',
+    display: "Image"
+  },
+  {
+    path: '#docs',
+    display: "Docs"
+  }
+];
 
 const Header = () => {
-
+  const navigate = useNavigate();
   const headerRef = useRef(null);
-
   const menuRef = useRef(null);
 
   const headerFunc = () => {
-    if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
-      headerRef.current.classList.add('header__shrink')
-    }else{
-      headerRef.current.classList.remove('header__shrink')
+    if (headerRef.current) { // Check if headerRef.current is not null
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        headerRef.current.classList.add('header__shrink');
+      } else {
+        headerRef.current.classList.remove('header__shrink');
+      }
     }
-  }
-
-
-  useEffect(() => {
-    window.addEventListener('scroll', headerFunc)
-    return () => window.removeEventListener('scroll',headerFunc)
-  },[]);
-
-
-  const handleClick = e => {
-    e.preventDefault()
-
-    const targetAttr = e.target.getAttribute('href')
-
-    const location = document.querySelector(targetAttr).offsetTop;
-
-    window.scrollTo({
-      left: 0,
-      top: location - 80,
-    });
   };
 
+  useEffect(() => {
+    window.addEventListener('scroll', headerFunc);
+    return () => window.removeEventListener('scroll', headerFunc);
+  }, []);
 
-  const toggleMenu = () => menuRef.current.classList.toggle('menu__active');
+  const handleClick = (e, path) => {
+    e.preventDefault();
+
+    if (path === '/image') {
+      navigate(path); // Navigate to '/image' route
+    } else {
+      const targetAttr = e.target.getAttribute('href');
+      const location = document.querySelector(targetAttr).offsetTop;
+      window.scrollTo({
+        left: 0,
+        top: location - 80,
+      });
+    }
+  };
+
+  const toggleMenu = () => {
+    if (menuRef.current) { // Check if menuRef.current is not null
+      menuRef.current.classList.toggle('menu__active');
+    }
+  };
+
   return (
-  
-      <header className='header' ref={headerRef}>
-        <div className="container">
-            <div className="nav__wrapper">
-                <div className="logo">
-                    <h2>AI_CON</h2>
-                   
-                </div>
-
-                {/* navigation */}
-
-                <div className="navigation" ref={menuRef} onClick={toggleMenu}>
-                  <ul className="menu">
-                    {
-                       nav__links.map((item,index) => (
-                        <li className='menu__item' key={index}><a href={item.path}  onClick={handleClick} className='menu__link'>{item.display}</a></li>
-                       ))}
-                  </ul>
-                </div>
-
-              <span className="mobile__menu" onClick={toggleMenu}><i className="ri-menu-line"></i>
-              </span>
-            </div>
+    <header className='header' ref={headerRef}>
+      <div className="container">
+        <div className="nav__wrapper">
+          <div className="logo">
+            <h2>AI_CON</h2>
+          </div>
+          <div className="navigation" ref={menuRef} onClick={toggleMenu}>
+            <ul className="menu">
+              {nav__links.map((item, index) => (
+                <li className='menu__item' key={index}>
+                  <a href={item.path} onClick={(e) => handleClick(e, item.path)} className='menu__link'>
+                    {item.display}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <span className="mobile__menu" onClick={toggleMenu}>
+            <i className="ri-menu-line"></i>
+          </span>
         </div>
-      </header>
-   
+      </div>
+    </header>
   );
-}; 
+};
 
-export default Header
+export default Header;

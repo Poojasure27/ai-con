@@ -9,6 +9,7 @@ import Sample from './components/UI/Sample';
 import Carousel from './components/UI/Carousel';
 import Footer from './components/footer/Footer';
 
+
 const App = () => {
   return (
    <>
