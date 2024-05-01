@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import "./Header.css";
-import Image from "../../Image";
+import "../Login";
+import Image from "../../Image"; 
 import { useNavigate } from 'react-router-dom';
 
 const nav__links = [
@@ -17,8 +18,12 @@ const nav__links = [
     display: "Image"
   },
   {
-    path: '#docs',
+    path: 'https://docs-ai-three.vercel.app/', // Modify this path to match your Next.js application URL
     display: "Docs"
+  },
+  {
+    path: "/login",
+    display: "Login"
   }
 ];
 
@@ -47,13 +52,21 @@ const Header = () => {
 
     if (path === '/image') {
       navigate(path); // Navigate to '/image' route
+    } else if (path.startsWith('#')) {
+      // If the path starts with '#', assume it's an internal anchor link
+      const targetId = path.slice(1); // Remove the '#'
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const location = targetElement.offsetTop;
+        window.scrollTo({
+          left: 0,
+          top: location - 80,
+          behavior: 'smooth' // Optionally smooth scrolling
+        });
+      }
     } else {
-      const targetAttr = e.target.getAttribute('href');
-      const location = document.querySelector(targetAttr).offsetTop;
-      window.scrollTo({
-        left: 0,
-        top: location - 80,
-      });
+      // For external links, simply redirect the user
+      window.location.href = path;
     }
   };
 

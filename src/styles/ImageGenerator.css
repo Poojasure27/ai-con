@@ -1,3 +1,7 @@
+.header{
+    padding: 40px 0 0 0;
+}
+
 .ai-image-generator {
     display: flex;
     flex-direction: column;

@@ -7,17 +7,17 @@ const chooseData = [
     {
        icon: "ri-image-line",
        title: "Image",
-       description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, ea non odio accusamus odit officiis dolor facilis error, eum numquam cum tempore culpa corrupti ad accusantium quis hic. Vel, inventore?"
+       description : "Elevate your content with precision-crafted visuals. Our innovative platform transforms prompts into striking images, tailored to your vision. Experience the power of AI-con imagery today"
     },
     {
         icon: "ri-group-line",
         title: "Dedicated team",
-        description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, ea non odio accusamus odit officiis dolor facilis error, eum numquam cum tempore culpa corrupti ad accusantium quis hic. Vel, inventore?"
+        description : "Experience the expertise of our dedicated team, committed to bringing your vision to reality. With skillful hands and innovative minds, we deliver results that exceed expectations, every time"
      },
      {
         icon: "ri-file-line",
         title: "Document",
-        description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, ea non odio accusamus odit officiis dolor facilis error, eum numquam cum tempore culpa corrupti ad accusantium quis hic. Vel, inventore?"
+        description : "Effortlessly enhance your productivity with our document generation tool. Input your prompts, and our advanced technology will meticulously craft professional documents tailored to your specifications with precision and efficiency."
      },
 ]
 
@@ -31,9 +31,9 @@ const About = () => {
     <div className="about__wrapper">
         <div className="about__content">
         <h6 className='subtitles'>Why choose us?</h6>
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+            <h2>Unlock imagination, Streamline Process</h2>
             <h2 className="highlight">Image Generation</h2>
-            <p className='description about__content-desc'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit ipsam sit, ipsa soluta nostrum, a corporis consectetur, aliquid aspernatur numquam ratione quam eum deserunt sunt vel enim eligendi? Commodi, ex.</p>
+            <p className='description about__content-desc'>Turn your ideas into vivid visuals effortlessly with AI-con. Just give us your prompts, and let our tech bring them to life in stunning detail!</p>
 
            <div className='choose__item-wrapper'>
             {
