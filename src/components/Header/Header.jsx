@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import "./Header.css";
-import "../Login";
+import "../../Login";
 import Image from "../../Image"; 
 import { useNavigate } from 'react-router-dom';
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import "../src/login.css";
 
 const Login = () => {
   // State to manage login form inputs
@@ -18,10 +19,31 @@ const Login = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your login logic here, such as API calls, validation, etc.
-    console.log(formData); // For demonstration purposes, log form data to console
+
+    try {
+      // Make a POST request to the /login endpoint with form data
+      const response = await fetch('/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      // Check if the request was successful
+      if (response.ok) {
+        // Redirect or perform any other actions upon successful login
+        console.log('Login successful');
+      } else {
+        // Handle error response
+        const data = await response.json();
+        console.error('Login failed:', data.message);
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
   };
 
   return (

@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import App from './App';
 import Image from "./Image";
+import Login from "./Login"
 // import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -17,7 +18,12 @@ const router = createBrowserRouter([
   {
     path: "/image",
     element: <Image />
+  },
+  {
+    path: "/login",
+    element: <Login />
   }
+
 ]);
 
 
