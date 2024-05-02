@@ -18,11 +18,11 @@ const router = createBrowserRouter([
   {
     path: "/image",
     element: <Image />
-  },
-  {
-    path: "/login",
-    element: <Login />
-  }
+   }
+  // {
+  //   path: "/login",
+  //   element: <Login />
+  // }
 
 ]);
 

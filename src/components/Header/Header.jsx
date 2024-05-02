@@ -20,11 +20,11 @@ const nav__links = [
   {
     path: 'https://docs-ai-three.vercel.app/', // Modify this path to match your Next.js application URL
     display: "Docs"
-  },
-  {
-    path: "/login",
-    display: "Login"
   }
+  // {
+  //   path: "/login",
+  //   display: "Login"
+  // }
 ];
 
 const Header = () => {

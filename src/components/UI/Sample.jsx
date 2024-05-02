@@ -15,17 +15,17 @@ const sampleData = [{
 {
 
     imgUrl: sampleImg2,
-    prompt: "A man with a Lion"
+    prompt: "Funky cow"
    },
    {
 
     imgUrl: sampleImg3,
-    prompt: "A man with a Lion"
+    prompt: "A cat as a roman empire"
    },
 
    {
       imgUrl: sampleImg4,
-      prompt: "A man with a Lion"
+      prompt: "world before us"
      }
 
 
