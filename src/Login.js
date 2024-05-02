@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import "./login.css"; // Import your CSS file
 import { Link } from 'react-router-dom';
-import "../src/login.css";
 
 const Login = () => {
   // State to manage login form inputs
@@ -21,28 +21,27 @@ const Login = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    // Implement authentication logic here, such as API calls, validation, etc.
     try {
-      // Make a POST request to the /login endpoint with form data
-      const response = await fetch('/login', {
+      // Example: Send login request to backend API
+      const response = await fetch('/api/login', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
-
-      // Check if the request was successful
       if (response.ok) {
-        // Redirect or perform any other actions upon successful login
-        console.log('Login successful');
+        // Authentication successful
+        console.log('Login successful!');
+        // Redirect user to authenticated area
       } else {
-        // Handle error response
-        const data = await response.json();
-        console.error('Login failed:', data.message);
+        // Authentication failed
+        console.error('Login failed!');
+        // Display error message to user
       }
     } catch (error) {
-      console.error('An error occurred:', error);
+      console.error('An error occurred during login:', error);
     }
   };
 
