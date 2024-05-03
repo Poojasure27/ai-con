@@ -1,7 +1,7 @@
 import React from 'react';
 import "../../styles/services.css";
-import AIImage from "../../images/ai.jpg"; // Import your AI image
-import DocumentUploaderImage from "../../images/docs.jpg"; // Import your Document Uploader image
+import AIImage from "../../images/ai.jpg"; 
+import DocumentUploaderImage from "../../images/docs.jpg"; 
 
 const Sevices = () => {
   return (
