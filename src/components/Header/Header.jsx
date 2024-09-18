@@ -18,7 +18,7 @@ const nav__links = [
     display: "Image"
   },
   {
-    path: 'https://docs-ai-three.vercel.app/', // Modify this path to match your Next.js application URL
+    path: "https://ai-doc-con.vercel.app/", // Modify this path to match your Next.js application URL
     display: "Docs"
   }
   // {
